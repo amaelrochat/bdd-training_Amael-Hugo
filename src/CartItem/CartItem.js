@@ -30,11 +30,12 @@ module.exports = class CartItem {
     }
 
     get quantity() {
-        //TODO Implement this method
+        return this.#quantity;
     }
 
     set quantity(value) {
-        //TODO Implement this method
+        this.#validateQuantity(value);
+        return this.#quantity = value;
     }
 
     get price() {
@@ -64,7 +65,12 @@ module.exports = class CartItem {
     }
 
     #validateQuantity(quantity) {
-        //TODO Implement this method
+        if (quantity >= 1) {
+            return quantity;
+        }
+        else {
+            throw new InvalidQuantityException();
+        }
     }
 
     #validatePrice(price) {

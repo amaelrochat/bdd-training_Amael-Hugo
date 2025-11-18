@@ -57,7 +57,7 @@ module.exports = class CartItem {
     }
 
     set #name(value) {
-        //TODO Implement this method
+        return this.#price = value;
     }
 
     #validateArticleId(articleId) {

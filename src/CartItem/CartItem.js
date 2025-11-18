@@ -38,11 +38,12 @@ module.exports = class CartItem {
     }
 
     get price() {
-        //TODO Implement this method
+        return this.#price;
     }
 
     set price(value) {
-        //TODO Implement this method
+        this.#validatePrice(value);
+        return this.#price = value;
     }
 
     get total() {

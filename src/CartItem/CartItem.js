@@ -19,10 +19,10 @@ module.exports = class CartItem {
         this.#name(name);
         this.quantity(quantity);
         this.price(quantity)
-    }   
+    }
 
     get articleId() {
-        //TODO Implement this method
+        return this.#articleId;
     }
 
     get name() {

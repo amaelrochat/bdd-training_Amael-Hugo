@@ -18,7 +18,7 @@ module.exports = class CartItem {
         this.#articleId(articleId);
         this.#name(name);
         this.quantity(quantity);
-        this.price(quantity)
+        this.price(price)
     }   
 
     get articleId() {

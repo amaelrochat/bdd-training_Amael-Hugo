@@ -53,7 +53,7 @@ module.exports = class CartItem {
 
     //region private methods
     set #articleId(value) {
-        //TODO Implement this method
+        return this.#articleId = value;
     }
 
     set #name(value) {

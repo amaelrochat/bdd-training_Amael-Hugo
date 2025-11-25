@@ -8,7 +8,7 @@ module.exports = class CartItem {
 
     //region private attributes
     #articleIdValue;
-    #name;
+    #nameValue;
     #quantity;
     #price;
     //endregion private attributes
@@ -18,7 +18,7 @@ module.exports = class CartItem {
         this.#articleId = articleId;
         this.quantity = quantity;
         this.price = price;
-        this.#nameSetter = name;
+        this.#name = name;
     }   
 
 
@@ -59,8 +59,8 @@ module.exports = class CartItem {
         return this.#articleIdValue = value;
     }
 
-    set #nameSetter(value) {
-        return this.#price = value;
+    set #name(value) {
+        return this.#nameValue = value;
     }
 
     #validateArticleId(articleId) {

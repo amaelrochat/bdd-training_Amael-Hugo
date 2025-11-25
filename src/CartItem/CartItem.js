@@ -16,17 +16,18 @@ module.exports = class CartItem {
     //region public methods
     constructor(articleId, name, quantity, price) {
         this.#articleIdSetter(articleId);
-        this.#name(name);
         this.quantity(quantity);
-        this.price(quantity)
-    }
+        this.price(quantity);
+        this.#nameSetter(articleId);
+    }   
+
 
     get articleId() {
         return this.#articleId;
     }
 
     get name() {
-        //TODO Implement this method
+        return this.#name;
     }
 
     get quantity() {
@@ -39,15 +40,16 @@ module.exports = class CartItem {
     }
 
     get price() {
-        //TODO Implement this method
+        return this.#price;
     }
 
     set price(value) {
-        //TODO Implement this method
+        this.#validatePrice(value);
+        return this.#price = value;
     }
 
     get total() {
-        //TODO Implement this method
+        return this.#quantity * this.#price;
     }
     //endregion public methods
 
@@ -57,8 +59,8 @@ module.exports = class CartItem {
         return this.#articleId = value;
     }
 
-    set #name(value) {
-        //TODO Implement this method
+    set #nameSetter(value) {
+        return this.#price = value;
     }
 
     #validateArticleId(articleId) {
@@ -80,7 +82,16 @@ module.exports = class CartItem {
     }
 
     #validatePrice(price) {
-        //TODO Implement this method
+        if (price < 10) {
+            return InvalidPriceException;
+        }
+        if (price.type !== 'integer') {
+            return InvalidPriceException;
+        }
+        else {
+            return price;
+        }
+
     }
     //endregion private methods
 }

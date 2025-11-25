@@ -17,8 +17,8 @@ module.exports = class CartItem {
     constructor(articleId, name, quantity, price) {
         this.#articleIdSetter(articleId);
         this.quantity(quantity);
-        this.price(quantity);
-        this.#nameSetter(articleId);
+        this.price(price);
+        this.#nameSetter(name);
     }   
 
 

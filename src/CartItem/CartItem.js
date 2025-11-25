@@ -82,14 +82,11 @@ module.exports = class CartItem {
     }
 
     #validatePrice(price) {
-        if (price < 10) {
-            return InvalidPriceException;
-        }
-        if (price.type !== 'integer') {
-            return InvalidPriceException;
+        if (price >= 10) {
+            return price;
         }
         else {
-            return price;
+            throw new InvalidPriceException();
         }
 
     }

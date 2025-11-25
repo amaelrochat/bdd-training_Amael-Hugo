@@ -47,7 +47,7 @@ module.exports = class CartItem {
     }
 
     get total() {
-        //TODO Implement this method
+        return this.#quantity * this.#price;
     }
     //endregion public methods
 

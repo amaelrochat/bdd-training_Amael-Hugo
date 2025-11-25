@@ -15,7 +15,7 @@ module.exports = class CartItem {
 
     //region public methods
     constructor(articleId, name, quantity, price) {
-        this.#articleId(articleId);
+        this.#nameSetter(articleId);
         this.#name(name);
         this.quantity(quantity);
         this.price(price)
@@ -56,7 +56,7 @@ module.exports = class CartItem {
         //TODO Implement this method
     }
 
-    set #name(value) {
+    set #nameSetter(value) {
         return this.#price = value;
     }
 
